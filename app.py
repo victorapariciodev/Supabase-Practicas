@@ -17,7 +17,7 @@ def get_supabase() -> Client:
     """
     url = os.getenv("SUPABASE_URL")
     key = os.getenv("SUPABASE_KEY")
-
+# goty
     if not url or not key:
         raise RuntimeError("Faltan SUPABASE_URL y/o SUPABASE_KEY en el entorno")
 
@@ -34,10 +34,9 @@ def index():
 def instruments():
     try:
         response = (
-            get_supabase()
+            get_supabase() #ready
             .table("instruments")
             .select("*")
-            .order("name", desc=False)
             .execute()
         )
     except RuntimeError as exc:
